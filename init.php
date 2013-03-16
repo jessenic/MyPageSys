@@ -1,5 +1,5 @@
 <?php
-    require "dbsettings.php" or die("Failed to load database settings.");
+    (@include("dbsettings.php")) or die("Failed to load database settings.");
     //PHPBB Session integration
     if($use_phpbb_sessions){
         define('IN_PHPBB', true);
