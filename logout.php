@@ -1,7 +1,7 @@
 <?php
 	include "init.php";
     if($use_phpbb_sessions){
-        Header("Location: ".$phpbb_url."ucp.php?mode=logout");
+        Header("Location: ".$phpbb_url."ucp.php?mode=logout&sid=".$user->data['session_id']);
         die();
     }
 	header('location: index.php');

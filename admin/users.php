@@ -11,6 +11,12 @@
 			</div>
 		</div>
 	</p>
+	<?php if($use_phpbb_sessions){
+	    ?>
+    <p>phpBB user system is in use. Please modify users in phpBB settings.</p>
+	    <?php
+    }else{
+        ?>
 	<p>Here is a quick view of you pages users</p>
 	<p>
 		<form method="post">
@@ -51,5 +57,6 @@
 			echo "</tr>";
 		}
 		echo "</table></p>";
+	}
 	?>
 </div>

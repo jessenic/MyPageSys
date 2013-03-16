@@ -43,11 +43,9 @@
 		}elseif($type == 3){ //1 normal page, 2 link so we won't do anything for it here 3 is article page.
 			$content_tpl = new MPSTemplate("styles/".$style_url."/template/article_page.html");
 			$content_tpl->set("location","Salmitunturi.com -> Kehitysuutiset -> Artikkeli");
-			if(isset($_SESSION['account_group'])){
-				if($_SESSION['account_group'] == 1){
+			if((isset($_SESSION['account_group']) && $_SESSION['account_group'] == 1) || ($use_phpbb_authentication ? $auth->acl_get('a_') : false)){
 					$content_tpl->set("tool_newpost","<p>".$lang_content['tools'].": <a href='blog/newpost.php?to=$p'>".$lang_content['new_post']."</a>");
 					$content_tpl->set("tool_newcategory","<a href=''>".$lang_content['new_gategory']."</a></p>");
-				}
 			}else{
 					$content_tpl->set("tool_newpost","");
 					$content_tpl->set("tool_newcategory","");
@@ -110,11 +108,10 @@
 				$blogpost_tpl->set("blog_post_action_comment","");
 				
 				
-				if(isset($_SESSION['account_group'])){				
-					if($_SESSION['account_group']==1){
-						$blogpost_tpl->set("blog_post_action_delete","<a href='index.php?question=blog/delete.php?post=$post_id'>".$lang_blog_post['delete']."</a>");	
-						$blogpost_tpl->set("blog_post_action_edit","<a href='blog/edit.php?post=$post_id'>".$lang_blog_post['edit']."</a>");
-					}
+				
+                if((isset($_SESSION['account_group']) && $_SESSION['account_group'] == 1) || ($use_phpbb_authentication ? $auth->acl_get('a_') : false)){
+					$blogpost_tpl->set("blog_post_action_delete","<a href='index.php?question=blog/delete.php?post=$post_id'>".$lang_blog_post['delete']."</a>");	
+					$blogpost_tpl->set("blog_post_action_edit","<a href='blog/edit.php?post=$post_id'>".$lang_blog_post['edit']."</a>");	
 				}else{
 					$blogpost_tpl->set("blog_post_action_delete","");	
 					$blogpost_tpl->set("blog_post_action_edit","");

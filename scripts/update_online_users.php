@@ -7,14 +7,16 @@
 	mysql_select_db($s_db) or die("db error");
 	$query = mysql_query("SELECT * FROM ".$t_front."users_online WHERE sid='$sid'") or die(mysql_error());
 	$result = mysql_num_rows($query);
-	if(isset($_SESSION['username'])){
+    if($use_phpbb_sessions && $user->data['user_id'] != ANONYMOUS){
+        $username = $user->data['username'];
+    }elseif(isset($_SESSION['username'])){
 		$username = $_SESSION['username'];
 	}
 	if($result == 0){
 		$query = mysql_query("INSERT INTO ".$t_front."users_online (username, sid, time) values('guest', '$sid', '$time')");
 	}
 	else{
-		if(isset($_SESSION['username']))
+		if(isset($username))
 		{
 			$query = mysql_query("UPDATE ".$t_front."users_online SET username='$username' WHERE sid='$sid'");
 		}else{

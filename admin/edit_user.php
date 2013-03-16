@@ -1,4 +1,18 @@
 <?php 
+    include "checksecure.php";
+    if($use_phpbb_sessions){
+     ?>   
+<p>
+    <div class="box">
+        <div class="text_area">
+            <p>
+            phpBB user system is in use. Please modify users in phpBB settings.
+            </p>
+        </div>
+    </div>
+</p>
+       <?php 
+    }else{
 	$user_id = $_GET['user'];
 	$query = mysql_query("SELECT * FROM ".$t_front."users WHERE id = '$user_id'");
 	$id = mysql_result($query,0,"id");
@@ -60,3 +74,6 @@
 		</p>
 	</div>
 </div>
+<?php
+}
+?>

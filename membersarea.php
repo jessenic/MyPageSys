@@ -12,7 +12,7 @@
         $membersarea_tpl->set("userrank",$user->data['user_rank']);
         $membersarea_tpl->set("actions",$lang_m_area['actions']);
         if($auth->acl_get('a_')){
-            $membersarea_tpl->set("actionlist","<a href='admin'>".$lang_m_area['admin_control_panel']."</a><br>"."<a href='showprofile.php?user=".$_SESSION['username']."'>".$lang_m_area['view_profile']."</a><br>
+            $membersarea_tpl->set("actionlist","<a href='admin'>".$lang_m_area['admin_control_panel']."</a><br>"."<a href='showprofile.php?user=".$user->data['username_clean']."'>".$lang_m_area['view_profile']."</a><br>
         <a href='".$phpbb_url."ucp.php?mode=logout'>".$lang_m_area['log_out']."</a></p>");         
         }
     }elseif(isset($_SESSION['username']) && !$use_phpbb_sessions){

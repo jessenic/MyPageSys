@@ -30,7 +30,7 @@ include "checksecure.php";
 					<li><a href="?p=files">Files</a></li>
 					<li><a href="?p=help">Help</a></li>
 					<li><a href="../index.php">Back to main page</a></li>
-					<li><a href="../logout.php">Logout <?php echo $_SESSION['username']; ?></a></li>
+					<li><a href="../logout.php">Logout <?php echo $use_phpbb_sessions ? $user->data['username_clean'] : $_SESSION['username']; ?></a></li>
 					
 				</ul>
 			</div>

@@ -21,7 +21,7 @@
 	$post_title = mysql_real_escape_string($_POST['title']);
 	$post_data = mysql_real_escape_string($_POST['content']);
 	$post_keywords = mysql_real_escape_string($_POST['keywords']);	
-	$author = $_SESSION['username'];
+	$author = $use_phpbb_sessions ? $user->data['username_clean'] : $_SESSION['username'];
 	$time = date("U");
 	$query = mysql_query("INSERT INTO ".$t_front."blog_posts (post_host_page, post_id, post_title, post_data, post_keywords, author, time) VALUES(
 	'$post_host_page', '$set_post_id', '$post_title', '$post_data', '$post_keywords', '$author', '$time'
