@@ -15,10 +15,10 @@
 	include "files/template.class.php"; //if this file is not included, templates wont work at all!	
 	
 	//initializing templates
-	$main_tpl = new Template("styles/".$style_url."/template/main.html");
+	$main_tpl = new MPSTemplate("styles/".$style_url."/template/main.html");
 	
-	$navbar_tpl = new Template("styles/".$style_url."/template/navbar.html");	
-	$footer_tpl = new Template("styles/".$style_url."/template/footer.html");	
+	$navbar_tpl = new MPSTemplate("styles/".$style_url."/template/navbar.html");	
+	$footer_tpl = new MPSTemplate("styles/".$style_url."/template/footer.html");	
 	
 	
 	
@@ -31,7 +31,7 @@
 	include "scripts/show_online_users.php";
 	
 	//starting up the header (html code can be modified from styles/stylename/template/header.html!)
-	$header_tpl = new Template("styles/".$style_url."/template/header.html");
+	$header_tpl = new MPSTemplate("styles/".$style_url."/template/header.html");
 	
 	////// SELECTING RANDOM HEADER IMAGE.. THIS IS CUSTOM STUFF ;) ////// 
 	$image = rand(1,4);

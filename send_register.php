@@ -1,5 +1,9 @@
 <?php 
 	include "init.php";
+    if($use_phpbb_sessions){
+        header("Location: ".$phpbb_url."ucp.php?mode=register");
+        die();
+    }
 	$new_name = mysql_real_escape_string($_POST['new_username']);
 	$new_email = mysql_real_escape_string($_POST['new_email']);
 	$new_password = md5($_POST['new_password']);

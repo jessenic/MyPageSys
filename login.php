@@ -1,5 +1,9 @@
 <?php
 	include "init.php";
+    if($use_phpbb_sessions){
+        Header("Location: ".$phpbb_url."ucp.php?mode=login");
+        die();
+    }
 	if(isset($_POST['username'])){	
 		$username = mysql_real_escape_string($_POST['username']);
 		$password = md5($_POST['password']);

@@ -1,4 +1,9 @@
 <?php include "init.php";
+if($use_phpbb_sessions){
+    header("Location: ".$phpbb_url."memberlist.php?mode=viewprofile&un=".$_GET['user']);
+    die();
+}
+
 if(!isset($_SESSION['username'])){
 	header("location:index.php?msg=You don't have enough rights to view this content. Please login or register.");
 }else{

@@ -1,4 +1,9 @@
-<?php include "init.php" ?>
+<?php include "init.php";
+if($use_phpbb_sessions){
+    header("Location: ".$phpbb_url."ucp.php?mode=register");
+    die();
+}
+ ?>
 <html>
 <head>
 	<title><?php echo $page_title." - Register"; ?></title>

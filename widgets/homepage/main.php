@@ -41,7 +41,7 @@ Name: Allan Hiltunen
 				
 			
 			
-			$post_tpl = new Template("widgets/homepage/template/post.html");
+			$post_tpl = new MPSTemplate("widgets/homepage/template/post.html");
 			$post_data = BBCode(substr(mysql_result($query,$i,"post_data"),0,600));		
 			$post_tpl->set("post_content", $post_data);
 			$post_tpl->set("post_link","index.php?showpost=".mysql_result($query,$i,"post_id"));

@@ -26,7 +26,7 @@
 		
 	
 	if($result == 0){
-		$content_tpl = new Template("styles/".$style_url."/template/error.html");// initializing the error page template
+		$content_tpl = new MPSTemplate("styles/".$style_url."/template/error.html");// initializing the error page template
 		$content_tpl->set("error_msg",$lang_content['404_page_not_found']);
 	}else{	
 		$views = mysql_result($query,0,"views") + 1;
@@ -35,13 +35,13 @@
 		if($type == 1){			
 			$page_data = mysql_result($query,0,"text");
 			
-			$content_tpl = new Template("styles/".$style_url."/template/page.html");
+			$content_tpl = new MPSTemplate("styles/".$style_url."/template/page.html");
 			$content_tpl->set("content", BBCode($page_data));
 			$content_tpl->set("updated", $lang_content['page_updated'].": ".mysql_result($query,0,"last_update"));
 			$content_tpl->set("views", $lang_content['page_viewed']." ".$views." ".$lang_content['times']);
 	
 		}elseif($type == 3){ //1 normal page, 2 link so we won't do anything for it here 3 is article page.
-			$content_tpl = new Template("styles/".$style_url."/template/article_page.html");
+			$content_tpl = new MPSTemplate("styles/".$style_url."/template/article_page.html");
 			$content_tpl->set("location","Salmitunturi.com -> Kehitysuutiset -> Artikkeli");
 			if(isset($_SESSION['account_group'])){
 				if($_SESSION['account_group'] == 1){
@@ -68,7 +68,7 @@
 				$author = "<a href='showprofile.php?user=".mysql_result($query,$i,"author")."'>".mysql_result($query,$i,"author")."</a>";
 				$content = BBCode(mysql_result($query,$i,"post_data"));
 			
-				$blogpost_tpl = new Template("styles/".$style_url."/template/blogpost_s.html");				
+				$blogpost_tpl = new MPSTemplate("styles/".$style_url."/template/blogpost_s.html");				
 				$blogpost_tpl->set("blog_post_header",$title);
 				$blogpost_tpl->set("blog_post_author",$author);
 				$blogpost_tpl->set("blog_post_date", $time);
@@ -83,7 +83,7 @@
 		}
 	}	
 	}elseif(isset($post)){
-		$content_tpl = new Template("styles/".$style_url."/template/article_page.html");
+		$content_tpl = new MPSTemplate("styles/".$style_url."/template/article_page.html");
 	
 		$connect = mysql_connect($db_url,$db_username,$db_password) or die("database connection error");	
 		mysql_select_db($s_db) or die("db error");
@@ -102,7 +102,7 @@
 				$author = "<a href='showprofile.php?user=".mysql_result($query,0,"author")."'>".mysql_result($query,0,"author")."</a>";
 				$content = BBCode(mysql_result($query,0,"post_data"));
 			
-				$blogpost_tpl = new Template("styles/".$style_url."/template/blogpost_b.html");				
+				$blogpost_tpl = new MPSTemplate("styles/".$style_url."/template/blogpost_b.html");				
 				$blogpost_tpl->set("blog_post_header",$title);
 				$blogpost_tpl->set("blog_post_author",$author);
 				$blogpost_tpl->set("blog_post_date", $time);
@@ -126,7 +126,7 @@
 		}	
 		
 	}elseif(isset($w)){
-		$content_tpl = new Template("widgets/".$w."/template/main.html");// initializing the error page template
+		$content_tpl = new MPSTemplate("widgets/".$w."/template/main.html");// initializing the error page template
 		include "widgets/".$w."/main.php";
 		
 		

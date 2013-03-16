@@ -1,5 +1,5 @@
 <?php 
-	$vc_tpl = new Template("styles/".$style_url."/template/visitor_counter.html");	
+	$vc_tpl = new MPSTemplate("styles/".$style_url."/template/visitor_counter.html");	
 	
 	$connect = mysql_connect($db_url,$db_username,$db_password) or die("database connection error");	
 	mysql_select_db($s_db) or die("db error");

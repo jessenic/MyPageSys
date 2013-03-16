@@ -36,7 +36,7 @@
 
 		
 
-		$link_tpl = new Template("styles/".$style_url."/template/navbar_link.html");
+		$link_tpl = new MPSTemplate("styles/".$style_url."/template/navbar_link.html");
 		$link_tpl -> set("link_location",$link);
 		$link_tpl -> set("link_title",$link_title);
 		$links[] = $link_tpl->output();						

@@ -1,5 +1,9 @@
 <?php
 	include "init.php";
+    if($use_phpbb_sessions){
+        Header("Location: ".$phpbb_url."ucp.php?mode=logout");
+        die();
+    }
 	header('location: index.php');
 	$connect = mysql_connect($db_url,$db_username,$db_password) or die("database connection error");	
 	mysql_select_db($s_db) or die("db error");
