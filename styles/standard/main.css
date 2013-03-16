@@ -1,0 +1,311 @@
+body
+{
+	font-family:arial;
+	background-color:rgb(230,230,230);
+	font-size:14px;
+}
+
+a:link a:visited{
+	color:#5AACEA;	
+	text-decoration:underline;
+	
+}
+
+a:hover{
+	color:#5AACEA;
+	text-decoration:none;
+}
+
+.textinput{
+	border-radius:4px;
+	background-color:rgb(250,250,250);
+	padding:6px;
+	border-style:solid;
+	border-color:rgb(150,150,150);
+	border-width:1px;
+	font-family:arial;
+	
+}
+
+#main{
+	position:relative;
+	background-color:white;
+	border-style:solid;
+	border-color:black;
+	border-width:1px;
+	border-radius:5px;
+	left:10%;
+	width:80%;
+	float:left;
+}
+
+#header{
+	position:relative;
+	display:block;
+	left:0%;
+	top:0%;
+	width:100%;
+	height:200px;
+	color:#1E3990;
+	background-color:#353535;
+	font-family:arial black;
+	font-size:54px;
+	
+}
+
+#navbar{
+	border-bottom-color:black;
+	border-top-color:black;
+	background-color:rgb(240,240,240);
+	border-bottom-style:solid;
+	border-top-style:solid;
+	border-bottom-width:4px;
+	border-top-width:4px;
+	font-size:16px;
+}
+
+#search{
+	position:absolute;
+	left:70%;
+	width:30%;
+	height:35px;
+	top:165px; /* Change this value due to your logo image height */
+	background-color:rgb(250,250,250);	
+	border-color:black;
+	font-size:14px;
+	color:black;
+	font-family:arial;
+	border-top-left-radius:15px;
+	padding:3px;
+	border-color:black;
+	border-style:solid;
+	border-width:1px;
+	margin-top:-8px;
+	margin-left:-8px;
+}
+
+#navbar ul{
+	margin:0;
+	padding:0;
+	list-style-type:none;
+	overflow:hidden;		
+}
+
+#navbar li{
+	float:left;	
+}
+
+
+
+#navbar a:link, a:visited{
+	color:#5AACEA;	
+	display:block;
+	
+	text-align:center;
+	padding:10px;
+	width:150px;
+	background-color:rgb(240,240,240);
+	font-weight:bold;
+	text-decoration:none;
+	
+}
+
+#navbar a:hover{
+	color:#5AACEA;	
+	display:block;
+	text-align:center;
+	padding:10px;
+	width:150px;
+	background-color:rgb(245,245,245);		
+	text-decoration:underline;
+	
+}
+
+
+#main_content_wrapper{
+	position:relative;
+
+	
+}
+
+#content{
+	position:relative;
+	float:left;
+	width:70%;
+	
+}
+
+#right_sidebar{
+	position:relative;
+	float:left;
+	background-color:rgb(250,250,250);
+	width:30%;
+}
+
+.center{
+	text-align:center;
+}
+
+.header{
+	font-family:arial black;
+	font-size:24px;
+	text-decoration:underline;
+}
+
+.box_header{
+	background-image: -webkit-linear-gradient(270deg, black 10%, lightblue 80%);
+	background-image: -moz-linear-gradient(270deg, black 10%, lightblue 80%);
+	background-image: -o-linear-gradient(270deg, black 10%, lightblue 80%);
+	font-family:arial black;
+	font-size:20px;
+	color:white;	
+	text-align:center;
+	background-image:url(images/box_header_bg.png);
+}
+
+
+.box_footer{
+	background-color:rgb(50,50,50);
+	text-align:center;
+	font-size:14px;
+	color:white;
+	position:relative;
+	float:left;
+	width:100%;
+}
+
+
+.box{
+	float:left;
+	position:relative;
+	left:1%;
+	width:96%;
+	background-color:white;
+	border-style:solid;
+	border-color:black;
+	border-width:1px;
+	border-radius:5px;
+}
+.box_text_padding{
+	position:relative;
+	left:2%;
+	width:96%;
+}
+
+.profile_img{
+	left:50%;
+	margin-left:-65px;
+	position:relative;
+	border-style:dashed;
+	border-color:rgb(200,200,200);
+	border-width:1px;
+	width:130px;
+	height:130px;
+}
+
+.profile_img img{
+	width:130px;
+	height:130px;
+}
+
+.small_img{
+	position:relative;	
+	border-style:dashed;
+	border-color:rgb(200,200,200);
+	border-width:1px;
+	width:40px;
+	height:40px;
+}
+
+.small_img img{
+	width:40px;
+	height:40px;
+}
+
+.box2{
+	position:relative;
+	left:1%;
+	width:98%;
+	background-color:rgb(245,245,245);
+	border-color:black;
+	border-style:solid;
+	border-width:1px;
+}
+
+
+.post_link{
+	position:relative;
+	left:1%;
+	width:98%;
+	text-align:center;
+	font-size:15px;
+	border-radius:3px;
+	background-color:rgb(240,240,240);
+	border-style:solid;
+	border-color:rgb(100,100,100);
+	border-width:1px;
+	text-decoration:none;
+	padding:1px;
+	margin-left:-1px;
+}
+
+.post_link:hover{
+	position:relative;
+	left:1%;
+	width:98%;
+	text-align:center;
+	font-size:15px;
+	border-radius:3px;
+	background-color:rgb(250,250,250);
+	border-style:solid;
+	border-color:rgb(200,200,200);
+	border-width:1px;
+	padding:1px;
+	margin-left:-1px;
+}
+
+.text_box{
+	position:relative;
+	float:left;
+	left:1%;
+	width:98%;
+	background-color:rgb(253,253,253);
+	border-style:solid;
+	border-color:rgb(230,230,230);
+	border-width:1px;
+	border-radius:5px;
+}
+
+
+#msg{
+	position:absolute;
+	text-align:center;
+	border-style:solid;
+	border-width:3px;
+	border-color:black;
+	background-color:rgb(255,150,150);
+	left:50%;
+	top:50%;
+	width:30%;
+	height:20%;
+	margin-left:-15%;
+	margin-top:-10%;
+}
+
+#empty{
+	
+	position:relative;
+	height:120px;
+	float:left;
+	width:100%;
+}
+
+.wrapper{
+	width:100%;
+	float:left;
+}
+
+.half_wide{
+	float:left;
+	width:50%;
+}

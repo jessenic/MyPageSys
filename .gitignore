@@ -1,0 +1,13 @@
+# Ignore the database password file
+dbsettings.php
+
+#OS junk files
+[Tt]humbs.db
+*.DS_Store
+
+#Subversion files
+.svn
+
+
+# Office Temp Files
+~$*
