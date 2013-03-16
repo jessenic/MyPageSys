@@ -1,10 +1,25 @@
 <?php
 	include "init.php";
-    if($use_phpbb_sessions){
-        Header("Location: ".$phpbb_url."ucp.php?mode=login");
-        die();
-    }
-	if(isset($_POST['username'])){	
+    if($use_phpbb_sessions && isset($_POST['username'])){
+         $result = $auth->login($_POST['username'], $_POST['password'], true);
+        
+        switch($result['status']){
+            case LOGIN_BREAK:
+                header("location: index.php?msg=".urlencode($result['error_msg']));
+                break;
+            case LOGIN_ERROR_USERNAME:
+            case LOGIN_ERROR_PASSWORD:
+                header("location: index.php?msg=".urlencode("User not found! Please check your username and password!"));
+                break;
+            case LOGIN_ERROR_ATTEMPTS:
+                header("location: index.php?msg=".urlencode("Too many failed login attempts!"));
+                break;
+            case LOGIN_SUCCESS:
+            default:
+                header("location: index.php"); 
+            break;
+        }
+    }elseif(isset($_POST['username'])){	
 		$username = mysql_real_escape_string($_POST['username']);
 		$password = md5($_POST['password']);
 		
@@ -28,7 +43,7 @@
 			$_SESSION['account_group_str'] = mysql_result($query,0,"name");
 			
 		}else{
-			header("location: index.php?msg=User not found! Please check your username and password!");
+			header("location: index.php?msg=".urlencode("User not found! Please check your username and password!"));
 			die();
 		}
 			header("location: index.php");
